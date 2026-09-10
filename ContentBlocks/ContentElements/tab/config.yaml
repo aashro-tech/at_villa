@@ -1,0 +1,102 @@
+name: mask/tab
+typeName: mask_tab
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: Text
+    identifier: tx_mask_tab_subtitle
+    label: Subtitle
+  -
+    type: Text
+    identifier: tx_mask_tab_title
+    label: title
+  -
+    type: Collection
+    identifier: tx_mask_tab_info
+    label: 'Tab Information'
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: Text
+        identifier: tx_mask_tab_button
+        label: 'Tab Button'
+      -
+        type: Collection
+        identifier: tx_mask_info_table_
+        label: 'Info Table'
+        appearance:
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            new: true
+            sort: true
+          levelLinksPosition: top
+          showAllLocalizationLink: true
+          showNewRecordLink: true
+          showPossibleLocalizationRecords: true
+          useSortable: true
+        foreign_field: parentid
+        foreign_sortby: sorting
+        fields:
+          -
+            type: Text
+            identifier: tx_mask_table_label
+            label: Label
+          -
+            type: Text
+            identifier: tx_mask_table_value
+            label: Value
+      -
+        type: File
+        identifier: tx_mask_image
+        label: Image
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Text
+        identifier: tx_mask_header_text
+        label: 'Header Text'
+      -
+        type: Textarea
+        identifier: tx_mask_text
+        label: Text
+        enableRichtext: true
+      -
+        type: Text
+        identifier: tx_mask_button_text_
+        label: 'Button Text'
+      -
+        type: Link
+        identifier: tx_mask_button_link
+        label: 'Button Link'

@@ -1,0 +1,86 @@
+<f:if condition="{data.tx_mask_villa_property}">
+  <div class="section properties">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <ul class="properties-filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Show All</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".adv">Apartment</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".str">Villa House</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".rac">Penthouse</a>
+        </li>
+      </ul>
+
+      <!-- Property Items -->
+      <div class="row properties-box">
+        <f:for each="{data.tx_mask_villa_property}" as="data_item">
+          <div class="col-lg-4 col-md-6 mb-30 properties-items {data_item.tx_mask_category}">
+            <div class="item">
+              <!-- Image -->
+              <f:if condition="{data_item.tx_mask_image}">
+                <f:for each="{data_item.tx_mask_image}" as="file" >
+                  <a href="{file.link}">
+                    <f:image image="{file}" alt="{file.description}" width="350" height="260" />
+                  </a>
+                </f:for>
+              </f:if>
+
+              <!-- Category -->
+              <span class="category">{data_item.tx_mask_villa}</span>
+
+              <!-- Price -->
+              <f:if condition="{data_item.tx_mask_price}">
+                <h6>${data_item.tx_mask_price}</h6>
+              </f:if>
+
+              <!-- Address -->
+              <f:if condition="{data_item.tx_mask_address}">
+                <h4><a href="{data_item.tx_mask_button_link}">{data_item.tx_mask_address}</a></h4>
+              </f:if>
+
+              <!-- Items List -->
+              <f:if condition="{data_item.tx_mask_item}">
+                <ul>
+                  <f:for each="{data_item.tx_mask_item}" as="data_item_item">
+                    <li>
+                      <f:if condition="{data_item_item.tx_mask_item_label}">{data_item_item.tx_mask_item_label}: </f:if>
+                     <span> <f:if condition="{data_item_item.tx_mask_item_value}">{data_item_item.tx_mask_item_value}</f:if> </span>
+                    </li>
+                  </f:for>
+                </ul>
+              </f:if>
+
+              <!-- Button -->
+              <f:if condition="{data_item.tx_mask_button_text} && data_item.tx_mask_button_link}">
+                <div class="main-button">
+                  <f:link.typolink parameter="{data_item.tx_mask_button_link}">
+                    {data_item.tx_mask_button_text}
+                  </f:link.typolink>
+                </div>
+              </f:if>
+            </div>
+          </div>
+        </f:for>
+      </div>
+
+      <!-- Pagination (Optional) -->
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a class="is_active" href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">>></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</f:if>   

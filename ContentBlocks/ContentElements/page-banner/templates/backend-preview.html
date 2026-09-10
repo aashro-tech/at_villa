@@ -1,0 +1,19 @@
+<style type="text/css" >
+.page-heading { background-image: url(../images/page-heading-bg.jpg); background-position: center bottom; background-repeat: no-repeat; background-size: cover; padding: 110px 0px; text-align: center; }
+.page-heading .banner span { background-color: #fff; color: #1e1e1e; font-size: 14px; font-weight: 500; text-transform: uppercase; padding: 7px 21px; display: inline-block; margin-bottom: -6px; }
+.page-heading .banner h3 { font-size: 48px; font-weight: 900; text-transform: uppercase; color: #fff; }
+</style>
+<f:for each="{data.tx_mask_image_}" as="file">
+ <div class="page-heading header-text" style="background-image: url('{f:uri.image(image: file)}'); ">
+    </f:for>  
+    <div class="container banner">
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="breadcrumb"><a href="/" title="Home"> Home </a>/ Page</span>
+          <f:if condition="{data.tx_mask_heading}">
+              <h3>{data.tx_mask_heading}</h3>  
+          </f:if>
+        </div>
+      </div>
+    </div>
+  </div>

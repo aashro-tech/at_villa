@@ -1,0 +1,35 @@
+<style type="text/css">
+  .fun-facts { text-align: center; margin-top: 30px}
+.fun-facts .counter { background-color: #ffeee9; position: relative; border-radius: 10px; width: 270px; padding: 20px 0px; display:inline-block; }
+.fun-facts .counter::after { position: absolute; width: 50px; height: 50px; background-color: #f35525; border-radius: 50%; content: ''; right: -25px; top: -25px; }
+.fun-facts .counter h2 {margin-right: 25px;font-size: 40px;color: #f35525;}
+.fun-facts .counter p {text-align: left;font-size: 16px;color: #1e1e1e;font-weight: 600;line-height: 28px;}
+.fun-facts .counter p {display: inline-flex;vertical-align: middle;}
+.fun-facts .counter h2 { display: inline-flex; vertical-align: middle;}
+</style>
+<f:if condition="{data.tx_mask_counter_fun}">
+ <div class="fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+                <f:for each="{data.tx_mask_counter_fun}" as="data_item">
+                  <div class="col-lg-4">
+                    <div class="counter">
+                        <f:if condition="{data_item.tx_mask_number_}">
+                          <h2 class="timer count-title count-number" data-to="{data_item.tx_mask_number_}" data-speed="1000">{data_item.tx_mask_number_}</h2>
+                        </f:if>  
+                        <f:if condition="{data_item.tx_mask_title_counter_}">
+                           <p class="count-text ">{data_item.tx_mask_title_counter_ -> f:format.nl2br()}</p>
+                        </f:if>   
+                    </div>   
+                  </div>
+                </f:for>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</f:if>      

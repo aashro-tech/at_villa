@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/properties-filter">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Properties Filter</source>
+                <target>Immobilienfilter</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.label">
+                <source>Villa properties </source>
+                <target>Immobilienangebote</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_category.label">
+                <source>category</source>
+                <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_category.items.adv.label">
+                <source>Apartment</source>
+                <target>Wohnung</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_category.items.str.label">
+                <source>Villa House</source>
+                <target>Villa-Haus</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_category.items.rac.label">
+                <source>Penthouse</source>
+                <target>Penthouse</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_image.label">
+                <source>Image</source>
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_villa.label">
+                <source>Villa</source>
+                <target>Villa</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_price.label">
+                <source>Price</source>
+                <target>Preis</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_address.label">
+                <source>Address</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_item.label">
+                <source>Property Item </source>
+                <target>Immobilienmerkmal</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_item.tx_mask_item_label.label">
+                <source>Label</source>
+                <target>Bezeichnung</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_item.tx_mask_item_value.label">
+                <source>Value</source>
+                <target>Value</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_button_text.label">
+                <source>Button Name</source>
+                <target>Schaltflächenname</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_villa_property.tx_mask_button_link.label">
+                <source>Button Link</source>
+                <target>Schaltflächenlink</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

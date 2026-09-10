@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-05-21T10:00:00Z" product-name="at_villa" >
+        <body>
+            <trans-unit id="copyright">
+                <source>Copyright © 2026 Villa Agency Co., Ltd. All rights reserved.</source>
+                <target>Copyright © 2026 Villa Agency Co., Ltd. Alle Rechte vorbehalten.</target>
+            </trans-unit>
+            <trans-unit id="Schedule">
+                <source>Schedule a visit</source>
+                <target>Besuch vereinbaren</target>
+            </trans-unit>
+            <trans-unit id="newsNotFound">
+                <source>Villa Detail Not Found !</source>
+                <target>Villa Detail nicht gefunden !</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,101 @@
+	<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+		  data-namespace-typo3-fluid="true">
+	<!--
+		=====================
+			Partials/List/Item.html
+			Custom Villa Property Layout
+	-->
+<n:excludeDisplayedNews newsItem="{newsItem}"/>
+		<f:variable name="categoryClass" value="" />
+		<f:for each="{newsItem.categories}" as="cat">
+		    <f:variable 
+		        name="categoryClass" 
+		        value="{categoryClass} {cat.title}" />
+		</f:for>
+	  <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 {categoryClass}">
+		<div class="item">
+			<!-- Property Image -->
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+				<f:if condition="{newsItem.mediaPreviews}">
+					<f:then>
+						<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+							<f:if condition="{mediaElement.originalResource.type} == 2">
+								<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}"  width="350" height="260"  />
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 4">
+								<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 5">
+								<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" />
+							</f:if>
+						</f:alias>
+					</f:then>
+					<f:else>
+						<f:if condition="{settings.displayDummyIfNoMedia}">
+							<f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}"/>
+						</f:if>
+					</f:else>
+				</f:if>
+			</n:link>
+
+			<f:if condition="{newsItem.firstCategory}">
+				<span class="category">{newsItem.firstCategory.title}</span>
+			</f:if>
+
+			<!-- Price (Custom Field) - tx_villa_price -->
+			<f:if condition="{newsItem.txVillaPrice}">
+				<h6>{newsItem.txVillaPrice}</h6>
+			</f:if>
+
+			<!-- Address (Custom Field) - tx_villa_address -->
+			<h4>
+				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+					<f:if condition="{newsItem.txVillaAddress}">
+						<f:then>
+							{newsItem.txVillaAddress}
+						</f:then>
+						<f:else>
+							{newsItem.title}
+						</f:else>
+					</f:if>
+				</n:link>
+			</h4>
+
+			<!-- Villa Details List -->
+			<ul>
+				<!-- Bedrooms - tx_villa_bedrooms -->
+				<f:if condition="{newsItem.txVillaBedrooms}">
+					<li>Bedrooms: <span>{newsItem.txVillaBedrooms}</span></li>
+				</f:if>
+				
+				<!-- Bathrooms - tx_villa_bathrooms -->
+				<f:if condition="{newsItem.txVillaBathrooms}">
+					<li>Bathrooms: <span>{newsItem.txVillaBathrooms}</span></li>
+				</f:if>
+				
+				<!-- Area - tx_villa_area -->
+				<f:if condition="{newsItem.txVillaArea}">
+					<li>Area: <span>{newsItem.txVillaArea}</span></li>
+				</f:if>
+				
+				<!-- Floor - tx_villa_floor -->
+				<f:if condition="{newsItem.txVillaFloor}">
+					<li>Floor: <span>{newsItem.txVillaFloor}</span></li>
+				</f:if>
+				
+				<!-- Parking - tx_villa_parking -->
+				<f:if condition="{newsItem.txVillaParking}">
+					<li>Parking: <span>{newsItem.txVillaParking} spots</span></li>
+				</f:if>
+			</ul>
+
+			<!-- Schedule a Visit Button -->
+			<div class="main-button">
+				<n:link newsItem="{newsItem}" settings="{settings}" class="more" title="{newsItem.title}">
+					Schedule a visit
+				</n:link>
+			</div>
+		</div>
+	   </div>
+</html>

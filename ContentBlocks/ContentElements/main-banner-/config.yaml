@@ -1,0 +1,54 @@
+name: mask/main-banner
+typeName: mask_main_banner_
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: Collection
+    identifier: tx_mask_slider
+    label: 'Hero Slider '
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: File
+        identifier: tx_mask_image
+        label: Image
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Textarea
+        identifier: tx_mask_heading
+        label: 'Heading '
+        enableRichtext: true
+      -
+        type: Textarea
+        identifier: tx_mask_location
+        label: 'Location '
+        wrap: virtual

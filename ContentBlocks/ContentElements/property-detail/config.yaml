@@ -1,0 +1,113 @@
+name: mask/property-detail
+typeName: mask_property_detail
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: File
+    identifier: tx_mask_image_
+    label: Image
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types
+  -
+    type: Collection
+    identifier: tx_mask_properties
+    label: 'Property Info'
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: File
+        identifier: tx_mask_icon
+        label: Icon
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Text
+        identifier: tx_mask_info_title
+        label: 'Info Title'
+      -
+        type: Text
+        identifier: tx_mask_info_subtitle
+        label: 'Info Subtitle'
+  -
+    type: Text
+    identifier: tx_mask_tab_title
+    label: title
+  -
+    type: Text
+    identifier: tx_mask_address
+    label: Address
+  -
+    type: Textarea
+    identifier: bodytext
+    useExistingField: true
+    label: 'Detail text'
+    enableRichtext: true
+  -
+    type: Collection
+    identifier: tx_mask_accordian
+    label: 'Accordian Items'
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: Textarea
+        identifier: tx_mask_title
+        label: Title
+        wrap: virtual
+      -
+        type: Textarea
+        identifier: tx_mask_accordion_text
+        label: 'Accordian Text'
+        enableRichtext: true

@@ -1,0 +1,107 @@
+<style type="text/css">
+.featured{margin-bottom: 60px;margin-top: 30px;}
+.featured .left-image {position: relative;}
+.featured .left-image img {padding-left: 18px; width: 100%;}   
+.featured .left-image a {display: inline-block; width: 110px;height: 110px;line-height: 110px;background-color: #f35525;border-radius: 50%;text-align: center;position: absolute;left: -34px; bottom: -55px;}
+.featured .section-heading {margin-left: 10px; margin-right: 12px; margin-bottom: 46px; margin-top: 5px;}
+ .featured .section-heading h6 {color: #ee626b; font-size: 14px; text-transform: uppercase;font-weight: 700;}
+.featured  .section-heading h2 { font-weight: 700; text-transform: capitalize; margin-top: 20px; line-height: 56px; margin-bottom: 68px width: 78%; font-size: 37px; width: 293px;}
+.featured .accordion { background: #f0f0f0;}
+.featured .info-table {border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 34px 1px;}
+.featured .info-table ul {list-style: none;margin-bottom: -2rem;}
+.featured .info-table ul li {
+display: block; margin-bottom: 25px; padding-bottom: 24px; border-bottom: 1px solid #eee;}
+.featured .info-table ul li img { float: left; margin-right: 25px;}
+.featured .info-table ul li h4 {font-weight: 600;font-size: 21px;}
+.featured .info-table ul li h4 span {color: #aaa;font-weight: 400;font-size: 15px;}
+.featured .accordion-body {font-size: 17px; padding: 9px 14px;}
+.featured .accordion-button:not(.collapsed) {color: #f35525; background-color: #f0f0f0; outline: none;}
+.featured .accordion {border-radius: 10px; background-color: #ececec; border-radius: 8px;}
+.featured .accordion-button{border: none;background-color: #eee;display: inline-block;width: 100%;border-bottom: 1px solid #d8d8d8;text-align: left;font-size: 19px;padding: 9px 16px;}
+.featured .accordion-button { pointer-events:none }
+.featured.section {padding: 30px;}
+</style>
+
+
+<div class="featured section">
+    <div class="container">
+      <div class="row">
+        <f:if condition="data.tx_mask_image">
+            <div class="col-lg-4">
+              <div class="left-image">
+                <f:for each="{data.tx_mask_image}" as="file">
+                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" height="498" />
+                    <f:for each="{data.tx_mask_icon_image}" as="file">
+                        <a href="{tx_mask_icon_link}"><f:image image="{file}" alt="{file.alternative}" style="max-width: 60px; padding: 0px;" /></a>
+                    </f:for>
+                </f:for>    
+              </div>
+            </div>
+        </f:if>    
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <f:if condition="{data.tx_mask_subtitle}">
+                <h6>{data.tx_mask_subtitle -> f:format.nl2br()}</h6>
+            </f:if>
+            <f:if condition="{data.tx_mask_title}"> 
+                <h2> {data.tx_mask_title -> f:format.nl2br()}</h2>
+            </f:if>
+          </div>
+           <f:if condition="{data.tx_mask_accordion_items}">
+                <div class="accordion" id="accordionExample">
+                    <f:for each="{data.tx_mask_accordion_items}" as="data_item" iteration="collaps">
+                        <div class="accordion-item">
+                            <!-- Unique Heading ID -->
+                            <h2 class="accordion-header" id="heading{collaps.cycle}">
+                                <f:if condition="{data_item.tx_mask_accordion_title}"> 
+                                    <button 
+                                        class="accordion-button {f:if(condition: '{collaps.isFirst}', then: '', else: 'collapsed')}" 
+                                        type="button" 
+                                        data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse{collaps.cycle}" 
+                                        aria-expanded="false" 
+                                        aria-controls="collapse{collaps.cycle}">   
+                                        {data_item.tx_mask_accordion_title}
+                                    </button>
+                                </f:if>    
+                            </h2>
+                            <f:if condition="{data_item.tx_mask_accordion_text}">
+                                <div 
+                                    id="collapse{collaps.cycle}" 
+                                    class="accordion-collapse collapse {f:if(condition: '{collaps.cycle} == 1', then: 'show', else: '')}" 
+                                    aria-labelledby="heading{collaps.cycle}" 
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    <f:format.stripTags allowedTags="<a> <strong>" >{data_item.tx_mask_accordion_text -> f:sanitize.html()} </f:format.stripTags> 
+                                    </div>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+        <f:if condition="{data.tx_mask_right_info_table}">
+        <div class="col-lg-3">
+          <div class="info-table">
+            <ul>
+              <f:for each="{data.tx_mask_right_info_table}" as="data_item">
+                  <li>
+                    <f:for each="{data_item.tx_mask_right_icon}" as="file">
+                    <f:image image="{file}" style="max-width: 52px;" />
+                    {file.description}
+                    </f:for>
+                    <h4><f:if condition="{data_item.tx_mask_info_title}">
+                    {data_item.tx_mask_info_title -> f:format.nl2br()}
+                </f:if><br><span>   <f:if condition="{data_item.tx_mask_info_subtitle_}">
+                    {data_item.tx_mask_info_subtitle_ -> f:format.nl2br()}
+                </f:if></span></h4>
+                  </li>
+              </f:for>
+            </ul>
+          </div>
+        </div>
+      </f:if>
+      </div>
+    </div>
+  </div>

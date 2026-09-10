@@ -1,0 +1,239 @@
+########################
+### MAIN PAGE OBJECT ###
+########################
+plugin.at_villa {
+        settings {
+            logoText = {$at_villa.website.settings.logoText}
+            address = {$at_villa.website.settings.address}
+            email = {$at_villa.website.settings.email}
+        }
+}
+
+page = PAGE
+page {
+
+    // Set default page typenum
+    typeNum = 0
+
+    // Setup favion
+    shortcutIcon = fileadmin/at_villa/building.png
+
+    meta {
+        viewport = width=device-width, initial-scale=1.0
+    }
+
+    headerData{
+        
+    }
+
+    // Initiate all the css-together
+    includeCSS {
+        fonts = https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap
+        bootstrap = EXT:at_villa/Resources/Public/vendor/bootstrap/css/bootstrap.min.css
+        fontawesome = EXT:at_villa/Resources/Public/css/fontawesome.css
+        style = EXT:at_villa/Resources/Public/css/templatemo-villa-agency.css
+        owl = EXT:at_villa/Resources/Public/css/owl.css
+        animate = EXT:at_villa/Resources/Public/css/animate.css
+        swiper = https://unpkg.com/swiper@7/swiper-bundle.min.css
+        Detail = EXT:at_villa/Resources/Public/css/Detail.css
+        Custom = EXT:at_villa/Resources/Public/css/custom.css
+    }
+
+    includeJS {
+        
+    }
+
+    // Initiate all the js-together
+    includeJSFooter {
+        minjs = EXT:at_villa/Resources/Public/vendor/jquery/jquery.min.js
+        bootstrapJs = EXT:at_villa/Resources/Public/vendor/bootstrap/js/bootstrap.min.js
+        isotop = EXT:at_villa/Resources/Public/javascript/isotope.min.js
+        owl-carousel = EXT:at_villa/Resources/Public/javascript/owl-carousel.js
+        counter = EXT:at_villa/Resources/Public/javascript/counter.js
+        custom = EXT:at_villa/Resources/Public/javascript/custom.js
+    }
+
+    // Let's start fluid_styled_content
+    10 = FLUIDTEMPLATE
+    10 {
+        layoutRootPath = {$at_villa.website.paths.layoutRootPath}
+        partialRootPath = {$at_villa.website.paths.partialRootPath}
+        templateRootPath = {$at_villa.website.paths.templateRootPath}
+
+        // Let's automatically choose backend layout and template
+        file.stdWrap.cObject = CASE
+        file.stdWrap.cObject {
+            key {
+                data = levelfield:-1, backend_layout_next_level, slide
+                override.field = backend_layout
+            }
+
+            default = TEXT
+            default.value = {$at_villa.website.paths.templateRootPath}Default.html
+
+        }
+        
+        settings < plugin.at_villa.settings
+
+        // Generate menu with DataProcessing
+        dataProcessing {
+
+            // Main menu
+            101 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            101 {
+                special = directory
+                special.value = 1
+                levels = 5
+                expandAll = 1
+                includeSpacer = 1
+                as = MainMenu
+            }
+
+            // Footer menu
+            102 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            102 {
+                levels = 5
+                special = directory
+                special.value = 1
+                expandAll = 1
+                includeSpacer = 1
+                as = FooterMenu
+            }
+
+            // Social Media Links
+            103 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            103 {
+                levels = 5
+                special = directory
+                special.value = 11
+                expandAll = 1
+                includeSpacer = 1
+                as = SocialMedia
+                dataProcessing {
+                    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    20 {
+                        references.fieldName = media
+                        as = icon
+                    }
+                }
+            }
+
+            // For Langauge Switcher
+            104 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            104 {
+                languages = auto
+                as = languagenavigation
+            }
+
+           
+        }
+    }
+}
+
+#########################
+### GLOBAL LIB OBJECT ###
+#########################
+
+lib {
+    // Define default content
+    content = CONTENT
+    content < styles.content.get
+
+    headerContent < lib.content
+    headerContent.select.where = colPos = 0
+}
+
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:at_villa/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:at_villa/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}
+
+plugin.tx_form {
+    view {
+        templateRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Layouts/
+        }
+    }
+}
+
+module.tx_form {
+    view {
+        templateRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:at_villa/Resources/Private/Form/Frontend/Layouts/
+        }
+    }
+}
+
+
+lib.tx_mask.content = CONTENT
+lib.tx_mask.content {
+    table = tt_content
+
+    select {
+        uidInList.current = 1
+    }
+}
+
+
+lib.breadcrumb = HMENU
+lib.breadcrumb {
+  special = rootline
+  special.range = 0|-1
+
+  1 = TMENU
+  1 {
+    NO = 1
+    NO {
+      ATagTitle.field = title
+      wrapItemAndSub = | 
+    }
+
+    CUR = 1
+    CUR {
+      doNotLinkIt = 1
+      wrapItemAndSub = |
+    }
+  }
+
+  wrap = <span class="breadcrumb">|</span>
+}
+
+
+
+plugin.tx_news {
+   view {
+      templateRootPaths {
+            100 = EXT:at_villa/Resources/Private/Extensions/News/Templates/
+        }
+      partialRootPaths {
+            100 = EXT:at_villa/Resources/Private/Extensions/News/Partials/
+        }
+      layoutRootPaths {
+            100 = EXT:at_villa/Resources/Private/Extensions/News/Layouts/
+      }
+   }
+}
+

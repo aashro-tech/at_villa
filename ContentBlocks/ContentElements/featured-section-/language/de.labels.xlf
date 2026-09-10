@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/featured-section">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Featured Section </source>
+                <target>Feature-Bereich</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_image.label">
+                <source>Left image</source>
+                <target>Linkes Bild</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_icon_image.label">
+                <source>Left icon image</source>
+                <target>Linkes Symbolbild</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_icon_link.label">
+                <source>Left icon link </source>
+                <target>Link des linken Symbols</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_subtitle.label">
+                <source>Subtitle </source>
+                <target>Untertitel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_title.label">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_accordion_items.label">
+                <source>Accordion Items</source>
+                <target>Akkordeon-Elemente</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_accordion_items.tx_mask_accordion_title.label">
+                <source>Accordion Title</source>
+                <target>Akkordeon-Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_accordion_items.tx_mask_accordion_text.label">
+                <source>Accordion Text</source>
+                <target>Akkordeon-Text</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_right_info_table.label">
+                <source>Right Info Table </source>
+                <target>Rechte Info-Tabelle</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_right_info_table.tx_mask_right_icon.label">
+                <source>Right Info Icon </source>
+                <target>Rechtes Info-Symbol</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_right_info_table.tx_mask_info_title.label">
+                <source>Info Title </source>
+                <target>Infotitel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_right_info_table.tx_mask_info_subtitle_.label">
+                <source>Info Subtitle </source>
+                <target>Info-Untertitel</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

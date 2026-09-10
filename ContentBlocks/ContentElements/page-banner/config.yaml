@@ -1,0 +1,27 @@
+name: mask/page-banner
+typeName: mask_page_banner
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: File
+    identifier: tx_mask_image_
+    label: Image
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types
+  -
+    type: Text
+    identifier: tx_mask_heading
+    label: Heading

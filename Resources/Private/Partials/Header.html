@@ -1,0 +1,107 @@
+<style type="text/css">
+
+</style>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+   <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <ul class="info">
+            <li><i class="fa fa-envelope"></i>{settings.email}</li>
+            <li><i class="fa fa-map"></i> {settings.address}</li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <ul class="social-links">
+            <f:for each="{SocialMedia}" as="social">    
+                <li>
+                    <a href="{social.link}" target="_blank">
+                        <f:for each="{social.icon}" as="icon">
+                            <f:image image="{icon}"  />
+                        </f:for>
+                    </a>
+                </li>
+            </f:for>
+          </ul>          
+        </div>
+        <div class="col-lg-2 col-md-2">
+            <f:if condition="{languagenavigation}">
+                <div class="language-switcher-wrapper">
+                    <button class="language-toggle-btn" id="languageToggle">
+                        <img src="/fileadmin/at_villa/gettyimages-657673164-612x612.jpg" alt="Language Icon"  />
+                    </button>
+              
+                    <ul class="language-switcher" id="languageMenu">
+                        <f:for each="{languagenavigation}" as="language">
+                            <li class="language-item {f:if(condition: language.active, then: 'active')}">
+                                <f:if condition="{language.available}">
+                                    <f:then>
+                                        <a class="language-link"
+                                           href="{language.link}"
+                                           hreflang="{language.hreflang}"
+                                           title="{language.title}">
+                                            {language.title}
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <span class="language-disabled">
+                                            {language.title}
+                                        </span>
+                                    </f:else>
+                                </f:if>
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </f:if>
+         </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <h1>{settings.logoText}</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <f:if condition="{MainMenu}">                    
+                        <ul class="nav">
+                            <f:for each="{MainMenu}" as="item">
+                                <li>
+                                    <a href="{item.link}" 
+                                         class="{f:if(condition: item.current, then: 'active')}">
+                                         {item.title}
+                                    </a>    
+                                </li>
+                            </f:for>
+                             <li><a href="#"><i class="fa fa-calendar"></i> <f:translate key="LLL:EXT:at_villa/Resources/Private/Language/locallang.xlf:Schedule" />  </a></li>
+
+                        </ul>   
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </f:if>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>

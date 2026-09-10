@@ -1,0 +1,44 @@
+<style>
+.video { background-repeat: no-repeat; background-size: cover;background-position: center center;padding: 100px 0px 250px 0px;position: relative;}
+.video-content { margin-top: -240px;}
+.video-content .video-frame { position: relative; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15); border-radius: 10px;}
+.video-content .video-frame img {border-radius: 10px;}
+.video-content .video-frame a { pointer-events: none;position: absolute;left: 50%;top: 50%;transform: translate(-26px, -26px);width: 52px;height: 52px;background-color: #fff;border-radius: 50%;display: inline-block;text-align: center;line-height: 52px;color: #f35525;outline: 15px solid rgba(254, 85, 37, 0.5);font-size: 18px;}
+ .video .section { height: 438px; }
+.video .section-heading h2 { color: white; }
+</style>
+
+<f:for each="{data.tx_mask_video_banner}" as="file">
+ <div class="video section"  style="background-image: url('{f:uri.image(image:file)}'); " >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <f:if condition="{data.tx_mask_video_subtitle_}">
+                <h6>{data.tx_mask_video_subtitle_}</h6>
+            </f:if>
+            <f:if condition="{data.tx_mask_video_title_}">    
+                <h2>Get Closer View & Different Feeling</h2>
+            </f:if>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</f:for>      
+
+<div class="video-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="video-frame">
+            <f:for each="{data.tx_mask_video_background}" as="file">
+                <f:image image="{file}" />
+                 {file.description}
+                <a href="{file.link}" target="_blank"><i class="fa fa-play"></i></a>
+            </f:for>    
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

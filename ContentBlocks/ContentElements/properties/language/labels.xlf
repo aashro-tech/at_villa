@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/properties">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Properties</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_sub.label">
+        <source>Subtitle</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_title.label">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.label">
+        <source>Properties Info</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_images.label">
+        <source>Images</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_villa_name.label">
+        <source>Villa Name</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_price.label">
+        <source>Price</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_address.label">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_items.label">
+        <source>Property Items</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_items.tx_mask_items_label.label">
+        <source>Label</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_property_info.tx_mask_items.tx_mask_item_value.label">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_button_text_.label">
+        <source>Button Name</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_button_link.label">
+        <source>Button LInk</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

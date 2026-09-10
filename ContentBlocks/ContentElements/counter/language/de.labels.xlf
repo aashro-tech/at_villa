@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/counter">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Counter Section</source>
+                <target>Zählerbereich</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_counter_fun.label">
+                <source>Counter </source>
+                <target>Zähler</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_counter_fun.tx_mask_number_.label">
+                <source>counter number</source>
+                <target>Zählernummer</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_counter_fun.tx_mask_title_counter_.label">
+                <source>title counter</source>
+                <target>Zählertitel</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,47 @@
+name: mask/vedio-section
+typeName: mask_vedio_section_
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: File
+    identifier: tx_mask_video_banner
+    label: 'Video Banner'
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types
+  -
+    type: Text
+    identifier: tx_mask_video_subtitle_
+    label: 'Video Subtitle '
+  -
+    type: Text
+    identifier: tx_mask_video_title_
+    label: 'Video Title '
+  -
+    type: File
+    identifier: tx_mask_video_background
+    label: 'Video Background'
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types

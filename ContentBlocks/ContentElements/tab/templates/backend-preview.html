@@ -1,0 +1,224 @@
+<style>
+.tabs-content .nav-item button {
+    pointer-events: none;
+}
+
+.section .section-heading h6 {
+  color: #ee626b;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.section .section-heading h2 {
+  font-size: 33px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-top: 20px;
+  line-height: 44px;
+  margin-bottom: 48px;  
+}
+
+.best-deal .tabs-content {
+  padding: 0px;
+  background-color: transparent;
+}
+
+.best-deal .tabs-content ul.nav-tabs {
+  border-bottom: none !important;
+  margin-bottom: 80px;
+  align-items: end;
+  justify-content: end;
+  margin-top: -130px;
+}
+.best-deal .tabs-content ul.nav-tabs li {
+  padding-right: 0px;
+  border-right: none;
+  margin-left: 20px;
+}
+
+.best-deal .tabs-content .nav-tabs .nav-link.active {
+  background-color: #f35525 !important;
+  color: #fff;
+}
+.best-deal .tabs-content .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #1e1e1e !important;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  padding: 0px 25px;
+  color: #fff;
+}
+.best-deal .info-table {
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  padding: 31px 26px;
+}
+.best-deal .info-table ul li {
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 400;
+}
+.best-deal .info-table ul li span {
+  font-size: 17px;
+  color: #1e1e1e;
+  font-weight: 700;
+  float: right;
+  display: inline-block;
+}
+.best-deal .tab-content img {
+  padding: 0px 45px;
+}
+
+.best-deal .tabs-content h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.best-deal .tabs-content p {
+  font-size: 14px;
+  line-height: 28px;
+  color: #4a4a4a;
+}
+
+.best-deal .icon-button {
+  margin-top: 30px;
+}
+.icon-button a {
+    pointer-events: none;
+  display: inline-block;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 30px 0px 0px;
+  border-radius: 25px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  width: 193px;
+}
+.icon-button a i {
+  background-color: #f35525;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 50px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-left: -1px;
+}
+</style>
+
+<div class="section best-deal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-heading">
+             <f:if condition="{data.tx_mask_tab_subtitle}">
+                <h6>{data.tx_mask_tab_subtitle}</h6>
+             </f:if>
+             <f:if condition="{data.tx_mask_tab_title}">   
+                <h2>{data.tx_mask_tab_title}</h2>
+             </f:if>       
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper">
+                <ul class="nav nav-tabs" role="tablist">
+                    <f:for each="{data.tx_mask_tab_info}" as="data_item" iteration="iter">
+                        <li class="nav-item" role="presentation">
+                            <button 
+                                class="nav-link {f:if(condition: iter.isFirst, then: 'active')}"
+                                id="tab-btn{iter.cycle}"
+                                data-bs-toggle="tab"
+                                data-bs-target="#tab-pan{iter.cycle}"
+                                type="button"
+                                role="tab"
+                                aria-controls="tab-btn{iter.cycle}"
+                                aria-selected="{f:if(condition: iter.isFirst, then: 'true', else: 'false')}">
+                                {data_item.tx_mask_tab_button}
+                            </button>
+                        </li>
+                    </f:for>
+                </ul>
+              </div>              
+              <div class="tab-content" id="myTabContent">
+                <f:for each="{data.tx_mask_tab_info}" as="data_item" iteration="iter">
+                    <div class="tab-pane fade {f:if(condition: iter.isFirst, then: 'show active')}"
+                         id="tab-pan{iter.cycle}"
+                         role="tabpanel"
+                         aria-labelledby="tab-btn{iter.cycle}">
+                        <div class="row">
+                            <!-- Info Table Column -->
+                            <f:if condition="{data_item.tx_mask_info_table_}">    
+                                <div class="col-lg-3">
+                                    <div class="info-table">
+                                        <ul>
+                                            <f:for each="{data_item.tx_mask_info_table_}" as="data_item_item">
+                                                <li>
+                                                    <f:if condition="{data_item_item.tx_mask_table_label}">
+                                                        {data_item_item.tx_mask_table_label} 
+                                                    </f:if> 
+                                                    <f:if condition="{data_item_item.tx_mask_table_value}">
+                                                        <span>{data_item_item.tx_mask_table_value}</span>
+                                                    </f:if>   
+                                                </li>
+                                            </f:for>    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </f:if>
+                            
+                            <!-- Image Column -->
+                            <f:if condition="{data_item.tx_mask_image}">
+                                <div class="col-lg-6">
+                                    <f:for each="{data_item.tx_mask_image}" as="file">
+                                        <f:image image="{file}" class="img-fluid" />
+                                        <f:if condition="{file.description}">
+                                            <p class="image-description">{file.description}</p>
+                                        </f:if>
+                                    </f:for>
+                                </div>
+                            </f:if>
+                            
+                            <!-- Text Content Column -->
+                            <div class="col-lg-3">
+                                <f:if condition="{data_item.tx_mask_header_text}">
+                                    <h4>{data_item.tx_mask_header_text}</h4>
+                                </f:if> 
+                                <f:if condition="{data_item.tx_mask_text}">
+                                    {data_item.tx_mask_text -> f:sanitize.html()}
+                                </f:if>
+                                <f:if condition="{data_item.tx_mask_button_text_}">
+                                    <div class="icon-button">
+                                        <a href="{f:uri.typolink(parameter: data_item.tx_mask_button_link)}">
+                                            <i class="fa fa-calendar"></i> 
+                                            {data_item.tx_mask_button_text_}
+                                        </a>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

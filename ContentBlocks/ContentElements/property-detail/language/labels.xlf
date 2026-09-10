@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/property-detail">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Property Detail</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_image_.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_properties.label">
+        <source>Property Info</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_properties.tx_mask_icon.label">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_properties.tx_mask_info_title.label">
+        <source>Info Title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_properties.tx_mask_info_subtitle.label">
+        <source>Info Subtitle</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_title.label">
+        <source>title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_address.label">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="bodytext.label">
+        <source>Detail text</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordian.label">
+        <source>Accordian Items</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordian.tx_mask_title.label">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordian.tx_mask_accordion_text.label">
+        <source>Accordian Text</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/page-banner">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Page Banner</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_image_.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_heading.label">
+        <source>Heading</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

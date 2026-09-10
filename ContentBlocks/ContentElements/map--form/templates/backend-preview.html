@@ -1,0 +1,36 @@
+<style>
+.contact-content .item { border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15); padding: 35px 30px; background-color: #fff;}
+.contact-content .item img { float: left; margin-right: 25px; vertical-align: middle; }
+.contact-content .item h6 { font-size: 20px; font-weight: 600; vertical-align: middle;}
+.contact-content .item h6 span { font-size: 15px; color: #aaaaaa; font-weight: 400;}
+</style>
+
+<div class="contact-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">  
+          <div class="row">
+             <f:for each="{data.tx_mask_contact_detail}" as="data_item">
+                <div class="col-lg-6">
+                  <div class="item phone">
+                    <f:for each="{data_item.tx_mask_image}" as="file">
+                      <f:image image="{file}"  style="max-width: 52px;" />
+                    </f:for>
+                       <h6>
+                          <f:if condition="{data_item.tx_mask_contact}">
+                            {data_item.tx_mask_contact} 
+                          </f:if><br>
+                          <span>
+                            <f:if condition="{data_item.tx_mask_label}">
+                                {data_item.tx_mask_label}
+                            </f:if>
+                          </span>
+                       </h6>
+                  </div>
+                </div>
+             </f:for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

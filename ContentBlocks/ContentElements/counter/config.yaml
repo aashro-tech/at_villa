@@ -1,0 +1,37 @@
+name: mask/counter
+typeName: mask_counter
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: Collection
+    identifier: tx_mask_counter_fun
+    label: 'Counter '
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: Number
+        identifier: tx_mask_number_
+        label: 'counter number'
+      -
+        type: Textarea
+        identifier: tx_mask_title_counter_
+        label: 'title counter'
+        wrap: virtual

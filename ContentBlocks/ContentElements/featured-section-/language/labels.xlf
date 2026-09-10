@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/featured-section">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Featured Section </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_image.label">
+        <source>Left image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_icon_image.label">
+        <source>Left icon image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_icon_link.label">
+        <source>Left icon link </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_subtitle.label">
+        <source>Subtitle </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_title.label">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordion_items.label">
+        <source>Accordion Items</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordion_items.tx_mask_accordion_title.label">
+        <source>Accordion Title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_accordion_items.tx_mask_accordion_text.label">
+        <source>Accordion Text</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_right_info_table.label">
+        <source>Right Info Table </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_right_info_table.tx_mask_right_icon.label">
+        <source>Right Info Icon </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_right_info_table.tx_mask_info_title.label">
+        <source>Info Title </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_right_info_table.tx_mask_info_subtitle_.label">
+        <source>Info Subtitle </source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

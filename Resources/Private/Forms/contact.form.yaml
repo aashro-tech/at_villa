@@ -1,0 +1,87 @@
+
+renderingOptions:
+  submitButtonLabel: 'Send massage'
+  fieldState:
+    text-1:
+      identifier: text-1
+      label: ' Full Name '
+      type: Text
+      renderingOptions:
+        deleted: 0
+    email-1:
+      identifier: email-1
+      label: 'Email Address'
+      type: Email
+      renderingOptions:
+        deleted: 0
+    text-2:
+      identifier: text-2
+      label: Subject
+      type: Text
+      renderingOptions:
+        deleted: 0
+    textarea-1:
+      identifier: textarea-1
+      label: ' Message '
+      type: Textarea
+      renderingOptions:
+        deleted: 0
+type: Form
+identifier: contact
+label: 'Contact '
+prototypeName: standard
+finishers:
+  -
+    options:
+      message: 'Thank you! Your form has been submitted successfully !'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: ' Full Name '
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Email
+        identifier: email-1
+        label: 'Email Address'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: EmailAddress
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: Subject
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: ' Message '

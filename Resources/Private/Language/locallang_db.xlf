@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-06T20:41:06Z" product-name="at_villa">
+		<header/>
+		<body>
+            <trans-unit id="header">
+                <source>Header configuration</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

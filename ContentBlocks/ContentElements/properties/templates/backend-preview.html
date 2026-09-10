@@ -1,0 +1,33 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <cb:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</cb:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    {data.tx_mask_property_sub}
+    {data.tx_mask_property_title}
+    <f:render partial="PageLayout/Grid" arguments="{data: data, identifier: 'tx_mask_property_info'}"/>
+    {data.tx_mask_button_text_}
+    <f:link.typolink parameter="{data.tx_mask_button_link}">Link</f:link.typolink>
+    <f:comment>{data.layout}</f:comment>
+    <f:comment>{data.frame_class}</f:comment>
+    <f:comment>{data.space_before_class}</f:comment>
+    <f:comment>{data.space_after_class}</f:comment>
+    {data.sectionIndex}
+    {data.linkToTop}
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>
+</html>

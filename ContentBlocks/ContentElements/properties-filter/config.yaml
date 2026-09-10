@@ -1,0 +1,120 @@
+name: mask/properties-filter
+typeName: mask_properties_filter
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: Collection
+    identifier: tx_mask_villa_property
+    label: 'Villa properties '
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: Select
+        identifier: tx_mask_category
+        label: category
+        fieldWizard:
+          selectIcons:
+            disabled: true
+        items:
+          -
+            label: Apartment
+            value: adv
+            icon: ''
+            group: ''
+            description: ''
+          -
+            label: 'Villa House'
+            value: str
+            icon: ''
+            group: ''
+            description: ''
+          -
+            label: Penthouse
+            value: rac
+            icon: ''
+            group: ''
+            description: ''
+        renderType: selectSingle
+      -
+        type: File
+        identifier: tx_mask_image
+        label: Image
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Text
+        identifier: tx_mask_villa
+        label: Villa
+      -
+        type: Text
+        identifier: tx_mask_price
+        label: Price
+      -
+        type: Text
+        identifier: tx_mask_address
+        label: Address
+      -
+        type: Collection
+        identifier: tx_mask_item
+        label: 'Property Item '
+        appearance:
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            new: true
+            sort: true
+          levelLinksPosition: top
+          showAllLocalizationLink: true
+          showNewRecordLink: true
+          showPossibleLocalizationRecords: true
+          useSortable: true
+        foreign_field: parentid
+        foreign_sortby: sorting
+        fields:
+          -
+            type: Text
+            identifier: tx_mask_item_label
+            label: Label
+          -
+            type: Text
+            identifier: tx_mask_item_value
+            label: Value
+      -
+        type: Text
+        identifier: tx_mask_button_text
+        label: 'Button Name'
+      -
+        type: Link
+        identifier: tx_mask_button_link
+        label: 'Button Link'

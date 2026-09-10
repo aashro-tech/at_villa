@@ -1,0 +1,23 @@
+<style>
+.contact { height: 430px; background-position: center;}
+ .section .section-banner h6 { color: #ee626b; font-size: 15px; text-transform: uppercase; font-weight: 700; margin-top: 99px;}
+.section .section-banner h2 { font-size: 38px; font-weight: 700; text-transform: capitalize; margin-top: 20px; line-height: 44px; margin-bottom: 48px; }
+</style>
+<f:for each="{data.tx_mask_image}" as="file">
+  <div class="contact section" style="background-image: url('{f:uri.image(image: file)}');">
+     </f:for>  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-banner text-center">
+            <f:if condition="{data.tx_mask_subtittle_}">
+               <h6> {data.tx_mask_subtittle_}</h6>
+            </f:if> 
+            <f:if condition="{data.tx_mask_title_}">
+              <h2 style="color: white">{data.tx_mask_title_}</h2>
+            </f:if>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,62 @@
+base: /
+dependencies:
+  - typo3/seo-sitemap
+  - georgringer/news-sitemap
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+    hreflang: ''
+    websiteTitle: ''
+  -
+    title: German
+    enabled: true
+    locale: de_DE.UTF-8
+    hreflang: de-DE
+    base: /de/
+    websiteTitle: ''
+    navigationTitle: Deutsch
+    fallbackType: strict
+    fallbacks: '0'
+    flag: de
+    languageId: 1
+rootPageId: 1
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+    defaultController: 'News::list'
+    aspects:
+      news-title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    index: ''
+    map:
+      /: 0
+      sitemap.xml: 1533906435
+  Form:
+    type: Extbase
+    extension: Form
+    plugin: Formframework
+    routes:
+      -
+        routePath: /submit
+        _controller: 'FormFrontend::perform'
+    defaultController: 'FormFrontend::perform'
+websiteTitle: Villa

@@ -1,0 +1,50 @@
+<f:asset.css identifier="identifier123">
+    iframe{
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+        width: 100%;
+    }
+</f:asset.css>
+
+
+<div class="contact-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+            <f:if condition="{data.tx_mask_map_}">
+              <div id="map">
+                {data.tx_mask_map_ -> f:format.raw()}
+              </div>
+            </f:if>  
+          <div class="row">
+             <f:for each="{data.tx_mask_contact_detail}" as="data_item">
+                <div class="col-lg-6">
+                  <div class="item phone">
+                    <f:for each="{data_item.tx_mask_image}" as="file">
+                      <f:image image="{file}"  style="max-width: 52px;" />
+                    </f:for>
+                       <h6>
+                          <f:if condition="{data_item.tx_mask_contact}">
+                            {data_item.tx_mask_contact} 
+                          </f:if><br>
+                          <span>
+                            <f:if condition="{data_item.tx_mask_label}">
+                                {data_item.tx_mask_label}
+                            </f:if>
+                          </span>
+                       </h6>
+                  </div>
+                </div>
+             </f:for>
+          </div>
+        </div>
+        <div class="col-lg-5">
+            <f:if condition="{data.tx_mask_form}">
+                <f:for each="{data.tx_mask_form}" as="data_item">
+                    <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item.uid}</f:cObject>
+                </f:for>
+            </f:if>
+        </div>
+      </div>
+    </div>
+  </div>

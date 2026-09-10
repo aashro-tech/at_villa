@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/map--form">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Map &amp; Form</source>
+                <target>Karte &amp; Formular</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_map_.label">
+                <source>Map Iframe</source>
+                <target>Karten-Iframe</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_contact_detail.label">
+                <source>Contact Detail</source>
+                <target>Kontaktdetails</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_contact_detail.tx_mask_image.label">
+                <source>Icon</source>
+                <target>Symbol</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_contact_detail.tx_mask_contact.label">
+                <source>Contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_contact_detail.tx_mask_label.label">
+                <source>Label</source>
+                <target>Bezeichnung</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_form.label">
+                <source>Form</source>
+                <target>Formular</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

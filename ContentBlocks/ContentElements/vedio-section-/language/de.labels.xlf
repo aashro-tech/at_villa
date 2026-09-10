@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/vedio-section-">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Media &amp; Banner Section </source>
+                <target>Medien- &amp; Banner-Bereich</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_video_banner.label">
+                <source>Video Banner</source>
+                <target>Video-Banner</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_video_subtitle_.label">
+                <source>Video Subtitle </source>
+                <target>Video-Untertitel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_video_title_.label">
+                <source>Video Title </source>
+                <target>Video-Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_video_background.label">
+                <source>Video Background</source>
+                <target>Video-Hintergrund</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

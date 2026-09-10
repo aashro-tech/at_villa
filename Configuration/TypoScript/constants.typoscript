@@ -1,0 +1,31 @@
+########################
+### General Settings ###
+########################
+
+# customsubcategory=100=LLL:EXT:at_villa/Resources/Private/Language/locallang_db.xlf:header
+
+at_villa {
+    website {
+        settings {
+
+                #cat = at_villa/100/03; type=string; label=Logo Text
+                logoText = My Website
+
+                #cat = at_villa/100/04; type=text; label=Address
+                address = Your address here  
+
+                 #cat = at_villa/100/05; type=text; label=email
+                email = Your email
+
+                #cat = at_villa/100/06; type=int; label=Main Menu Id
+                main_menu = 1
+        }
+
+        # Define paths for templates, layout and partial
+        paths {
+            templateRootPath = EXT:at_villa/Resources/Private/Templates/
+            layoutRootPath = EXT:at_villa/Resources/Private/Layouts/
+            partialRootPath = EXT:at_villa/Resources/Private/Partials/
+        }
+    }
+}

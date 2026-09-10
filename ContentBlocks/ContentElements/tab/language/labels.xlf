@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/tab">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Property Filter Section</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_subtitle.label">
+        <source>Subtitle</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_title.label">
+        <source>title</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.label">
+        <source>Tab Information</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_tab_button.label">
+        <source>Tab Button</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_info_table_.label">
+        <source>Info Table</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_info_table_.tx_mask_table_label.label">
+        <source>Label</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_info_table_.tx_mask_table_value.label">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_image.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_header_text.label">
+        <source>Header Text</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_text.label">
+        <source>Text</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_button_text_.label">
+        <source>Button Text</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_tab_info.tx_mask_button_link.label">
+        <source>Button Link</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

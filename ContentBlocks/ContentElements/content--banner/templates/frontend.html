@@ -1,0 +1,18 @@
+<f:for each="{data.tx_mask_image}" as="file">
+  <div class="contact section" style="background-image: url('{f:uri.image(image: file)}');">
+     </f:for>  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <f:if condition="{data.tx_mask_subtittle_}">
+               <h6> {data.tx_mask_subtittle_}</h6>
+            </f:if> 
+            <f:if condition="{data.tx_mask_title_}">
+              <h2>{data.tx_mask_title_}</h2>
+            </f:if>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

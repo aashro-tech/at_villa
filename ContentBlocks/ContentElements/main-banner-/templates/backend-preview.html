@@ -1,0 +1,46 @@
+<style type="text/css">
+.main-banner .owl-carousel .owl-stage-outer {position: relative; overflow: hidden; -webkit-transform: translate3d(0px, 0px, 0px);}
+.main-banner .owl-carousel .owl-item {width: 1850px;position: relative; min-height: 1px;}
+.main-banner .item h2 {font-size: 40px;font-weight: 700;text-transform: uppercase;color: #fff;line-height: 15px;width: 50%;margin-bottom: 0px;}
+.main-banner .item {background-position: center center;background-repeat: no-repeat;background-size: cover;padding: 140px 24% 211px 20%;margin-top: 0px;}
+.main-banner .owl-carousel .owl-stage::after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.main-banner .item span.category {background-color: #fff;color: #1e1e1e;font-weight: 500;text-transform: capitalize;display: inline-block;font-size: 13px;padding: 4px 12px;margin-bottom: 8px;}
+.main-banner .item span.category em {font-style: normal;color: #f35525;}
+.main-banner .owl-nav .owl-prev i{width: 50px;height: 50px;line-height: 50px;font-size: 24px;display: inline-block;color: #fff;background-color: rgba(255, 255, 255, 0.2);border-radius: 50%;opacity: 1;transition: all .3s;}
+</style>
+
+<div class="main-banner">
+    <f:if condition="{data.tx_mask_slider}">
+        <div class="owl-carousel owl-banner">
+
+            <f:for each="{data.tx_mask_slider}" as="data_item" iteration="iterator">
+                <f:if condition="{iterator.isFirst}">
+                    <div class="item item-{iterator.cycle}"
+                         style="background-image: url('{f:uri.image(image: data_item.tx_mask_image.0)}');">
+
+                        <div class="header-text">
+
+                            <!-- LOCATION -->
+                            <f:alias map="{parts: '{data_item.tx_mask_location -> f:format.raw() -> f:split(separator: \', \', limit: 2)}'}" >
+                                 <span class="category">
+                                    {parts.0}, <em>{parts.1}</em>
+                                 </span>
+                             </f:alias>
+
+                            <!-- HEADING -->
+                            <f:if condition="{data_item.tx_mask_heading}">
+                                <h2>
+                                <f:sanitize.html> {data_item.tx_mask_heading} </f:sanitize.html>
+                                </h2>
+                            </f:if>
+
+                        </div>
+
+                    </div>
+                </f:if>
+
+            </f:for>
+
+        </div>
+    </f:if>
+</div>

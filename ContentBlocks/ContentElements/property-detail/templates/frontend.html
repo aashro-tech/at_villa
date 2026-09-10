@@ -1,0 +1,90 @@
+<div class="single-property section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+            <f:for each="{data.tx_mask_image_}" as="file">  
+              <div class="main-image">
+                <f:image image="{file}" style="width: 855px;height: 472px;" alt="{file.description}"/>
+              </div>
+            </f:for>  
+          <div class="main-content">
+            <f:if condition="{data.tx_mask_tab_title}">  
+              <span class="category">{data.tx_mask_tab_title}</span>
+            </f:if> 
+            <f:if condition="{data.tx_mask_address}"> 
+              <h4>{data.tx_mask_address}</h4>
+            </f:if>
+            <f:if condition="{data.bodytext}">
+              {data.bodytext -> f:format.html()}
+            </f:if>
+          </div> 
+          <f:if condition="{data.tx_mask_accordian}">
+            <div class="accordion" id="accordionExample">
+              <f:for each="{data.tx_mask_accordian}" as="data_item" iteration="collaps">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="heading{collaps.cycle}">
+                    <f:if condition="{data_item.tx_mask_title}">
+                      <button 
+                        class="accordion-button {f:if(condition: '{collaps.isFirst}', then: '', else: 'collapsed')}"
+                        type="button"
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapse{collaps.cycle}" 
+                        aria-expanded="true" 
+                        aria-controls="collapse{collaps.cycle}">
+                        {data_item.tx_mask_title -> f:format.nl2br()}
+                      </button>
+                    </f:if>
+                  </h2>
+                  <f:if condition="{data_item.tx_mask_accordion_text}"> 
+                    <div
+                     id="collapse{collaps.cycle}" 
+                     class="accordion-collapse collapse {f:if(condition: '{collaps.cycle} == 1', then: 'show', else: '')}" 
+                     aria-labelledby="heading{collaps.cycle}" 
+                     data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <f:format.stripTags allowedTags="<a> <strong>" >
+                        {data_item.tx_mask_accordion_text -> f:format.html()}
+                        </f:format.stripTags>
+                      </div>
+                    </div>
+                  </f:if>  
+                </div>
+              </f:for>  
+            </div>
+          </f:if>
+        </div>
+        <f:if condition="{data.tx_mask_properties}"> 
+          <div class="col-lg-4">
+            <div class="info-table">
+              <ul>
+                <f:for each="{data.tx_mask_properties}" as="data_item">  
+                  <li>
+                    <f:for each="{data_item.tx_mask_icon}" as="file">
+                        <f:image image="{file}" alt="{file.description}" style="max-width: 52px;" />
+                    </f:for>
+                    <h4>
+                      <f:if condition="{data_item.tx_mask_info_title}">
+                          {data_item.tx_mask_info_title}
+                      </f:if><br>
+                      <span>
+                        <f:if condition="{data_item.tx_mask_info_subtitle}">
+                          {data_item.tx_mask_info_subtitle}
+                        </f:if>
+                      </span>
+                    </h4>
+                  </li>
+                </f:for>
+              </ul>
+            </div>
+          </div>
+        </f:if>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

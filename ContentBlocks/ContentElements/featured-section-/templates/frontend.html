@@ -1,0 +1,82 @@
+<div class="featured section">
+    <div class="container">
+      <div class="row">
+        <f:if condition="data.tx_mask_image">
+            <div class="col-lg-4">
+              <div class="left-image">
+                <f:for each="{data.tx_mask_image}" as="file">
+                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" height="498" />
+                    <f:for each="{data.tx_mask_icon_image}" as="file">
+                        <a href="{tx_mask_icon_link}"><f:image image="{file}" alt="{file.alternative}" style="max-width: 60px; padding: 0px;" /></a>
+                    </f:for>
+                </f:for>    
+              </div>
+            </div>
+        </f:if>    
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <f:if condition="{data.tx_mask_subtitle}">
+                <h6>{data.tx_mask_subtitle -> f:format.nl2br()}</h6>
+            </f:if>
+            <f:if condition="{data.tx_mask_title}"> 
+                <h2> {data.tx_mask_title -> f:format.nl2br()}</h2>
+            </f:if>
+          </div>
+           <f:if condition="{data.tx_mask_accordion_items}">
+                <div class="accordion" id="accordionExample">
+                    <f:for each="{data.tx_mask_accordion_items}" as="data_item" iteration="collaps">
+                        <div class="accordion-item">
+                            <!-- Unique Heading ID -->
+                            <h2 class="accordion-header" id="heading{collaps.cycle}">
+                                <f:if condition="{data_item.tx_mask_accordion_title}"> 
+                                    <button 
+                                        class="accordion-button {f:if(condition: '{collaps.isFirst}', then: '', else: 'collapsed')}" 
+                                        type="button" 
+                                        data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse{collaps.cycle}" 
+                                        aria-expanded="false" 
+                                        aria-controls="collapse{collaps.cycle}">   
+                                        {data_item.tx_mask_accordion_title}
+                                    </button>
+                                </f:if>    
+                            </h2>
+                            <f:if condition="{data_item.tx_mask_accordion_text}">
+                                <div 
+                                    id="collapse{collaps.cycle}" 
+                                    class="accordion-collapse collapse {f:if(condition: '{collaps.cycle} == 1', then: 'show', else: '')}" 
+                                    aria-labelledby="heading{collaps.cycle}" 
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    <f:format.stripTags allowedTags="<a> <strong>" >{data_item.tx_mask_accordion_text -> f:format.html()} </f:format.stripTags> 
+                                    </div>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+        <f:if condition="{data.tx_mask_right_info_table}">
+        <div class="col-lg-3">
+          <div class="info-table">
+            <ul>
+              <f:for each="{data.tx_mask_right_info_table}" as="data_item">
+                  <li>
+                    <f:for each="{data_item.tx_mask_right_icon}" as="file">
+                    <f:image image="{file}" style="max-width: 52px;" />
+                    {file.description}
+                    </f:for>
+                    <h4><f:if condition="{data_item.tx_mask_info_title}">
+                    {data_item.tx_mask_info_title -> f:format.nl2br()}
+                </f:if><br><span>   <f:if condition="{data_item.tx_mask_info_subtitle_}">
+                    {data_item.tx_mask_info_subtitle_ -> f:format.nl2br()}
+                </f:if></span></h4>
+                  </li>
+              </f:for>
+            </ul>
+          </div>
+        </div>
+      </f:if>
+      </div>
+    </div>
+  </div>

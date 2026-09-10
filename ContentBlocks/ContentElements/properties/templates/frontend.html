@@ -1,0 +1,63 @@
+ <div class="properties section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <f:if condition="{data.tx_mask_property_sub}">
+                <h6>{data.tx_mask_property_sub}</h6>
+            </f:if>  
+            <f:if condition="{data.tx_mask_property_title}">  
+                <h2>{data.tx_mask_property_title}</h2>
+            </f:if>    
+          </div>
+        </div>
+      </div>
+      <f:if condition="{data.tx_mask_property_info}">
+          <div class="row">
+             <f:for each="{data.tx_mask_property_info}" as="data_item">  
+                <div class="col-lg-4 col-md-6">
+                  <div class="item">
+                     <f:for each="{data_item.tx_mask_images}" as="file">  
+                        <a href="{file.link}"><f:image image="{file}"  width="350" height="260" /></a>
+                     </f:for>
+                     <f:if condition="{data_item.tx_mask_villa_name}">       
+                        <span class="category">{data_item.tx_mask_villa_name}</span>
+                     </f:if> 
+                     <f:if condition="{data_item.tx_mask_price}">
+                        <h6>${data_item.tx_mask_price}</h6>
+                     </f:if>   
+                        <h4><a href="property-details.html">
+                           <f:if condition="{data_item.tx_mask_address}">     
+                               {data_item.tx_mask_address} 
+                           </f:if>    
+                        </a></h4>
+                    <f:if condition="{data_item.tx_mask_items}">    
+                        <ul>
+                           <f:for each="{data_item.tx_mask_items}" as="data_item_item"> 
+                              <li><f:if condition="{data_item_item.tx_mask_items_label}"> 
+                                {data_item_item.tx_mask_items_label}: 
+                               </f:if> 
+                               <f:if condition="{data_item_item.tx_mask_item_value}">
+                               <span>{data_item_item.tx_mask_item_value}</span>
+                            </f:if>    
+                           </li>
+                           </f:for>   
+                        </ul>
+                    </f:if>    
+                    <div class="main-button">
+                        <f:if condition="{data.tx_mask_button_link}">
+                          <a href="{f:uri.typolink(parameter= data.tx_mask_button_link)}">
+                             <f:if condition="{data.tx_mask_button_text_}">
+                                {data.tx_mask_button_text_}
+                             </f:if>
+                          </a>
+                        </f:if>  
+                    </div>
+                  </div>
+                </div>
+              </f:for>
+            </div>
+        </f:if>    
+      </div>
+    </div>
+  </div>

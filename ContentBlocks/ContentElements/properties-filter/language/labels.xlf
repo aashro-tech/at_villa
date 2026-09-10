@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/properties-filter">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Properties Filter</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.label">
+        <source>Villa properties </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_category.label">
+        <source>category</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_category.items.adv.label">
+        <source>Apartment</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_category.items.str.label">
+        <source>Villa House</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_category.items.rac.label">
+        <source>Penthouse</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_image.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_villa.label">
+        <source>Villa</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_price.label">
+        <source>Price</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_address.label">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_item.label">
+        <source>Property Item </source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_item.tx_mask_item_label.label">
+        <source>Label</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_item.tx_mask_item_value.label">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_button_text.label">
+        <source>Button Name</source>
+      </trans-unit>
+      <trans-unit id="tx_mask_villa_property.tx_mask_button_link.label">
+        <source>Button Link</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

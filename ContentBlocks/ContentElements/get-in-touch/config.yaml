@@ -1,0 +1,96 @@
+name: mask/get-in-touch
+typeName: mask_get_in_touch
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: Textarea
+    identifier: bodytext
+    useExistingField: true
+    label: header
+    enableRichtext: true
+  -
+    type: Textarea
+    identifier: tx_mask_text_info
+    label: Text
+    wrap: virtual
+  -
+    type: Collection
+    identifier: tx_mask_contact_info
+    label: 'Contact Information'
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: File
+        identifier: tx_mask_image
+        label: Image
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Text
+        identifier: tx_mask_contact
+        label: 'Contact information'
+      -
+        type: Text
+        identifier: tx_mask_label
+        label: Label
+  -
+    type: Collection
+    identifier: tx_mask_form
+    label: Form
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_sortby: sorting
+    foreign_table: tt_content
+    overrideChildTca:
+      columns: {  }
+    foreign_field: tx_mask_content_parent_uid
+    foreign_table_field: tx_mask_content_tablenames
+    foreign_match_fields:
+      tx_mask_content_role: tx_mask_form
+    allowedRecordTypes:
+      - form_formframework
+  -
+    type: Textarea
+    identifier: tx_mask_map_iframe
+    label: 'Map Iframe'
+    wrap: virtual

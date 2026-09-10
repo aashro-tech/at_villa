@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" target-language="de">
+    <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-08T09:05:10+00:00" product-name="mask/properties">
+        <header />
+        <body>
+            <trans-unit id="title">
+                <source>Properties</source>
+                <target>Immobilien</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_sub.label">
+                <source>Subtitle</source>
+                <target>Untertitel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_title.label">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.label">
+                <source>Properties Info</source>
+                <target>Immobilieninformationen</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_images.label">
+                <source>Images</source>
+                <target>Bilder</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_villa_name.label">
+                <source>Villa Name</source>
+                <target>Villa-Name</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_price.label">
+                <source>Price</source>
+                <target>Preis</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_address.label">
+                <source>Address</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_items.label">
+                <source>Property Items</source>
+                <target>Immobilienmerkmale</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_items.tx_mask_items_label.label">
+                <source>Label</source>
+                <target>Bezeichnung</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_property_info.tx_mask_items.tx_mask_item_value.label">
+                <source>Value</source>
+                <target>Value</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_button_text_.label">
+                <source>Button Name</source>
+                <target>Schaltflächenname</target>
+            </trans-unit>
+            <trans-unit id="tx_mask_button_link.label">
+                <source>Button LInk</source>
+                <target>Schaltflächenlink</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

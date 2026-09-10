@@ -1,0 +1,101 @@
+<div class="section best-deal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-heading">
+             <f:if condition="{data.tx_mask_tab_subtitle}">
+                <h6>{data.tx_mask_tab_subtitle}</h6>
+             </f:if>
+             <f:if condition="{data.tx_mask_tab_title}">   
+                <h2>{data.tx_mask_tab_title}</h2>
+             </f:if>       
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper">
+                <ul class="nav nav-tabs" role="tablist">
+                    <f:for each="{data.tx_mask_tab_info}" as="data_item" iteration="iter">
+                        <li class="nav-item" role="presentation">
+                            <button 
+                                class="nav-link {f:if(condition: iter.isFirst, then: 'active')}"
+                                id="tab-btn{iter.cycle}"
+                                data-bs-toggle="tab"
+                                data-bs-target="#tab-pan{iter.cycle}"
+                                type="button"
+                                role="tab"
+                                aria-controls="tab-btn{iter.cycle}"
+                                aria-selected="{f:if(condition: iter.isFirst, then: 'true', else: 'false')}">
+                                {data_item.tx_mask_tab_button}
+                            </button>
+                        </li>
+                    </f:for>
+                </ul>
+              </div>              
+              <div class="tab-content" id="myTabContent">
+                <f:for each="{data.tx_mask_tab_info}" as="data_item" iteration="iter">
+                    <div class="tab-pane fade {f:if(condition: iter.isFirst, then: 'show active')}"
+                         id="tab-pan{iter.cycle}"
+                         role="tabpanel"
+                         aria-labelledby="tab-btn{iter.cycle}">
+                        <div class="row">
+                            <!-- Info Table Column -->
+                            <f:if condition="{data_item.tx_mask_info_table_}">    
+                                <div class="col-lg-3">
+                                    <div class="info-table">
+                                        <ul>
+                                            <f:for each="{data_item.tx_mask_info_table_}" as="data_item_item">
+                                                <li>
+                                                    <f:if condition="{data_item_item.tx_mask_table_label}">
+                                                        {data_item_item.tx_mask_table_label} 
+                                                    </f:if> 
+                                                    <f:if condition="{data_item_item.tx_mask_table_value}">
+                                                        <span>{data_item_item.tx_mask_table_value}</span>
+                                                    </f:if>   
+                                                </li>
+                                            </f:for>    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </f:if>
+                            
+                            <!-- Image Column -->
+                            <f:if condition="{data_item.tx_mask_image}">
+                                <div class="col-lg-6">
+                                    <f:for each="{data_item.tx_mask_image}" as="file">
+                                        <f:image image="{file}" class="img-fluid" />
+                                        <f:if condition="{file.description}">
+                                            <p class="image-description">{file.description}</p>
+                                        </f:if>
+                                    </f:for>
+                                </div>
+                            </f:if>
+                            
+                            <!-- Text Content Column -->
+                            <div class="col-lg-3">
+                                <f:if condition="{data_item.tx_mask_header_text}">
+                                    <h4>{data_item.tx_mask_header_text}</h4>
+                                </f:if> 
+                                <f:if condition="{data_item.tx_mask_text}">
+                                    {data_item.tx_mask_text -> f:format.html()}
+                                </f:if>
+                                <f:if condition="{data_item.tx_mask_button_text_}">
+                                    <div class="icon-button">
+                                        <a href="{f:uri.typolink(parameter: data_item.tx_mask_button_link)}">
+                                            <i class="fa fa-calendar"></i> 
+                                            {data_item.tx_mask_button_text_}
+                                        </a>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

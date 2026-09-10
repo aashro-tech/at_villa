@@ -1,0 +1,131 @@
+name: mask/featured-section
+typeName: mask_featured_section_
+prefixFields: false
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  -
+    type: File
+    identifier: tx_mask_image
+    label: 'Left image'
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types
+  -
+    type: File
+    identifier: tx_mask_icon_image
+    label: 'Left icon image'
+    appearance:
+      elementBrowserEnabled: true
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        sort: false
+      fileUploadAllowed: true
+      useSortable: true
+    allowed: common-image-types
+  -
+    type: Link
+    identifier: tx_mask_icon_link
+    label: 'Left icon link '
+  -
+    type: Textarea
+    identifier: tx_mask_subtitle
+    label: 'Subtitle '
+    wrap: virtual
+  -
+    type: Textarea
+    identifier: tx_mask_title
+    label: Title
+    wrap: virtual
+  -
+    type: Collection
+    identifier: tx_mask_accordion_items
+    label: 'Accordion Items'
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: Textarea
+        identifier: tx_mask_accordion_title
+        label: 'Accordion Title'
+        wrap: virtual
+      -
+        type: Textarea
+        identifier: tx_mask_accordion_text
+        label: 'Accordion Text'
+        enableRichtext: true
+  -
+    type: Collection
+    identifier: tx_mask_right_info_table
+    label: 'Right Info Table '
+    appearance:
+      enabledControls:
+        delete: true
+        dragdrop: true
+        hide: true
+        info: true
+        localize: true
+        new: true
+        sort: true
+      levelLinksPosition: top
+      showAllLocalizationLink: true
+      showNewRecordLink: true
+      showPossibleLocalizationRecords: true
+      useSortable: true
+    foreign_field: parentid
+    foreign_sortby: sorting
+    fields:
+      -
+        type: File
+        identifier: tx_mask_right_icon
+        label: 'Right Info Icon '
+        appearance:
+          elementBrowserEnabled: true
+          enabledControls:
+            delete: true
+            dragdrop: true
+            hide: true
+            info: true
+            localize: true
+            sort: false
+          fileUploadAllowed: true
+          useSortable: true
+        allowed: common-image-types
+      -
+        type: Textarea
+        identifier: tx_mask_info_title
+        label: 'Info Title '
+        wrap: virtual
+      -
+        type: Textarea
+        identifier: tx_mask_info_subtitle_
+        label: 'Info Subtitle '
+        wrap: virtual

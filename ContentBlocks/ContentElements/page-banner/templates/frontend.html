@@ -1,0 +1,22 @@
+<f:asset.css identifier="breadcrumb">
+
+.page-heading span.breadcrumb a::after {
+    content: " / "; 
+}
+</f:asset.css>
+
+
+<f:for each="{data.tx_mask_image_}" as="file">
+ <div class="page-heading header-text" style="background-image: url('{f:uri.image(image: file)}');">
+    </f:for>  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <f:cObject typoscriptObjectPath="lib.breadcrumb" />
+          <f:if condition="{data.tx_mask_heading}">
+              <h3>{data.tx_mask_heading}</h3>  
+          </f:if>
+        </div>
+      </div>
+    </div>
+  </div>
